@@ -4,9 +4,10 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.sap.CustomControl.controller.Main", {
-		onInit: function () {
+		onInit: function () {},
+		onPress: function () {
 			var oFormWF = this.getView().byId("formWF");
-			oFormWF.addItems();
+			oFormWF.addItems("","text");
 		}
 	});
 });

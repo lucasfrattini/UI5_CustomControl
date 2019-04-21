@@ -5,8 +5,8 @@
 				<Page id="page" title="{i18n>title}">
 					<content>
 						<controls:FormWF id="formWF">
-							
 						</controls:FormWF>
+						<Button icon="sap-icon://edit" press="onPress" ariaLabelledBy="editButtonLabel"/>
 					</content>
 				</Page>
 			</pages>

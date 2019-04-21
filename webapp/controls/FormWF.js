@@ -16,18 +16,16 @@ sap.ui.define(
 				//Cargo el CSS
 				//var libraryPath = jQuery.sap.getModulePath("com.sap.CustomControl");
 				//	jQuery.sap.includeStyleSheet(libraryPath + "/css/bkChat.css");
+				
+				//Creo el contenedor y lo asigno al aggregation
 				var oVBox = new sap.m.VBox(this.getId() + "-bkChatVBox", {
 
 				});
 				this.setAggregation("_VBox", oVBox);
-
-				var oText = new sap.m.Text("",{
-					text: "Hola"
-				});
-				oVBox.addItem(oText, 0);
 			},
 
 			renderer: function (oRm, oControl) {
+				//Obtengo el contenedor del aggregation y lo agrego a mi render
 				var oVbox = oControl.getAggregation("_VBox");
 				//first up, render a div for the ShadowBox
 				oRm.write("<div");
@@ -47,8 +45,18 @@ sap.ui.define(
 				oRm.write("</div>")
 			},
 			
-			addItems: function(){
-					
+			addItems: function(id,tipo){
+					if (tipo == "text"){
+						this.crearText(id);
+					}
+			},
+			
+			crearText: function(id){
+				var oText = new sap.m.Text(id,{
+					text: "Hola"
+				});
+				sap.ui.getCore().byId(this.getId() + "-bkChatVBox").addItem(oText);
+				
 			},
 
 			onAfterRendering: function () {
