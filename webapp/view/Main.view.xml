@@ -4,7 +4,7 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-						<controls:FormWF>
+						<controls:FormWF id="formWF">
 							
 						</controls:FormWF>
 					</content>

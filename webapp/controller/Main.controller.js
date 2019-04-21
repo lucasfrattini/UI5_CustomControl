@@ -5,7 +5,8 @@ sap.ui.define([
 
 	return Controller.extend("com.sap.CustomControl.controller.Main", {
 		onInit: function () {
-
+			var oFormWF = this.getView().byId("formWF");
+			oFormWF.addItems();
 		}
 	});
 });
